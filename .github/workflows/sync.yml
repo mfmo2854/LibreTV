@@ -2,8 +2,8 @@ name: Sync Fork Every 8 Hours
 
 on:
   schedule:
-    - cron: '0 */8 * * *'  # 每 8 小时执行一次
-  workflow_dispatch:       # 允许手动触发
+    - cron: '0 */8 * * *'
+  workflow_dispatch:
 
 jobs:
   sync:
@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0  # 获取完整提交记录，方便合并或 rebase
+          fetch-depth: 0
 
       - name: Add upstream repo
         run: git remote add upstream https://github.com/bestZwei/LibreTV.git
