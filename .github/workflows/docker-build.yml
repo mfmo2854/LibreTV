@@ -1,6 +1,6 @@
 name: 'Build LibreTV image'
 
-on:
+#on:
   push:
     branches:
       - main
